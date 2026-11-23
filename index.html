@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANDERSON TOP UP</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d1c;color:white;font-family:Arial,sans-serif}
+header{background:#101a35;padding:24px 15px;text-align:center;border-bottom:2px solid #168bff}
+header h1{color:#28a5ff;margin:0;font-size:28px}
+header p{color:#c5d9ff}
+main{max-width:650px;margin:auto;padding:20px}
+h2{color:#36aaff;text-align:center}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.product{background:#142342;border:1px solid #245b9b;border-radius:12px;padding:18px 8px;text-align:center}
+.product h3{margin:5px;color:#fff}
+.price{color:#36b5ff;font-weight:bold;font-size:20px}
+button{background:#087ff5;color:white;border:0;border-radius:9px;padding:13px;width:100%;font-weight:bold;margin-top:10px}
+form{background:#142342;padding:18px;border-radius:12px;margin-top:25px}
+input,select{width:100%;padding:13px;margin:8px 0;border:1px solid #35618e;border-radius:8px;background:#08152b;color:white}
+footer{text-align:center;color:#9baecc;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<h1>ANDERSON TOP UP</h1>
+<p>Recharge Free Fire rapidement !</p>
+</header>
+<main>
+<h2>💎 NOS PACKS DIAMANTS</h2>
+<div class="products">
+<div class="product"><h3>100 Diamants</h3><div class="price">155 HTG</div><button onclick="choose(100,155)">Commander</button></div>
+<div class="product"><h3>310 Diamants</h3><div class="price">465 HTG</div><button onclick="choose(310,465)">Commander</button></div>
+<div class="product"><h3>520 Diamants</h3><div class="price">775 HTG</div><button onclick="choose(520,775)">Commander</button></div>
+<div class="product"><h3>1060 Diamants</h3><div class="price">1550 HTG</div><button onclick="choose(1060,1550)">Commander</button></div>
+<div class="product"><h3>2180 Diamants</h3><div class="price">3100 HTG</div><button onclick="choose(2180,3100)">Commander</button></div>
+<div class="product"><h3>5600 Diamants</h3><div class="price">7750 HTG</div><button onclick="choose(5600,7750)">Commander</button></div>
+</div>
+
+<form onsubmit="sendOrder(event)">
+<h2>🛒 PASSER UNE COMMANDE</h2>
+<input id="name" placeholder="Votre nom" required>
+<input id="whatsapp" placeholder="Votre numéro WhatsApp" required>
+<input id="uid" placeholder="ID joueur Free Fire" required>
+<select id="pack" required>
+<option value="">Choisir un pack</option>
+<option value="100">100 Diamants - 155 HTG</option>
+<option value="310">310 Diamants - 465 HTG</option>
+<option value="520">520 Diamants - 775 HTG</option>
+<option value="1060">1060 Diamants - 1550 HTG</option>
+<option value="2180">2180 Diamants - 3100 HTG</option>
+<option value="5600">5600 Diamants - 7750 HTG</option>
+</select>
+<select id="payment" required>
+<option value="">Mode de paiement</option>
+<option>MonCash</option>
+<option>NatCash</option>
+</select>
+<button type="submit">Envoyer ma commande</button>
+<p id="message"></p>
+</form>
+</main>
+<footer>© 2026 ANDERSON TOP UP · Tous droits réservés</footer>
+<script>
+function choose(d,p){
+document.getElementById('pack').value=d;
+document.getElementById('pack').scrollIntoView({behavior:'smooth'});
+}
+function sendOrder(e){
+e.preventDefault();
+document.getElementById('message').textContent=
+"Le formulaire est prêt. La connexion au système de commande sera ajoutée à la prochaine étape.";
+}
+</script>
+</body>
+</html>
