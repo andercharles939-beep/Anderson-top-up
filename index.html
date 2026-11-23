@@ -7,72 +7,156 @@
 <title>ANDERSON TOP UP</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080d1c;color:white;font-family:Arial,sans-serif}
-header{background:#101a35;padding:24px 15px;text-align:center;border-bottom:2px solid #168bff}
-header h1{color:#28a5ff;margin:0;font-size:28px}
-header p{color:#c5d9ff}
-main{max-width:650px;margin:auto;padding:20px}
-h2{color:#36aaff;text-align:center}
-.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.product{background:#142342;border:1px solid #245b9b;border-radius:12px;padding:18px 8px;text-align:center}
-.product h3{margin:5px;color:#fff}
-.price{color:#36b5ff;font-weight:bold;font-size:20px}
-button{background:#087ff5;color:white;border:0;border-radius:9px;padding:13px;width:100%;font-weight:bold;margin-top:10px}
-form{background:#142342;padding:18px;border-radius:12px;margin-top:25px}
-input,select{width:100%;padding:13px;margin:8px 0;border:1px solid #35618e;border-radius:8px;background:#08152b;color:white}
-footer{text-align:center;color:#9baecc;padding:25px}
+body{margin:0;font-family:Arial,sans-serif;background:#07111f;color:white}
+header{padding:25px 16px;text-align:center;background:linear-gradient(135deg,#06152c,#073b78)}
+.logo{font-size:28px;font-weight:900;color:#35aaff}
+header p{color:#c7ddf5}
+.hero{padding:35px 18px;text-align:center}
+.hero h1{font-size:30px;margin:5px}
+.hero h1 span{color:#35aaff}
+.hero p{color:#b8c9dd;line-height:1.6}
+h2{text-align:center;color:#55b8ff;margin:30px 0 18px}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:12px;max-width:650px;margin:auto}
+.product{background:#10233b;border:1px solid #24476b;border-radius:14px;padding:18px 10px;text-align:center}
+.diamond{font-size:30px}
+.product h3{margin:10px 0;color:#fff}
+.price{font-size:20px;font-weight:bold;color:#40b5ff}
+.product button,.submit{background:#087ee5;color:white;border:0;border-radius:9px;padding:12px;font-weight:bold;width:100%;margin-top:12px}
+.product button:active,.submit:active{background:#0055a8}
+.formbox{background:#10233b;border:1px solid #24476b;border-radius:15px;padding:20px;margin:20px auto;max-width:550px}
+label{display:block;margin:14px 0 7px;color:#cde5ff}
+input,select{width:100%;padding:13px;border-radius:8px;border:1px solid #42617e;background:#07182b;color:white;font-size:16px}
+.note{font-size:13px;color:#a9bed5;line-height:1.5}
+footer{text-align:center;padding:25px;color:#8da9c5;font-size:13px}
 </style>
 </head>
 <body>
+
 <header>
-<h1>ANDERSON TOP UP</h1>
-<p>Recharge Free Fire rapidement !</p>
+<div class="logo">💎 ANDERSON TOP UP</div>
+<p>Votre boutique de diamants Free Fire</p>
 </header>
-<main>
-<h2>💎 NOS PACKS DIAMANTS</h2>
-<div class="products">
-<div class="product"><h3>100 Diamants</h3><div class="price">155 HTG</div><button onclick="choose(100,155)">Commander</button></div>
-<div class="product"><h3>310 Diamants</h3><div class="price">465 HTG</div><button onclick="choose(310,465)">Commander</button></div>
-<div class="product"><h3>520 Diamants</h3><div class="price">775 HTG</div><button onclick="choose(520,775)">Commander</button></div>
-<div class="product"><h3>1060 Diamants</h3><div class="price">1550 HTG</div><button onclick="choose(1060,1550)">Commander</button></div>
-<div class="product"><h3>2180 Diamants</h3><div class="price">3100 HTG</div><button onclick="choose(2180,3100)">Commander</button></div>
-<div class="product"><h3>5600 Diamants</h3><div class="price">7750 HTG</div><button onclick="choose(5600,7750)">Commander</button></div>
+
+<section class="hero">
+<h1>Recharge tes <span>diamants</span> !</h1>
+<p>Chwazi pakè dyaman ou vle a.<br>Prepare kòmand ou fasil sou telefòn ou.</p>
+</section>
+
+<h2>💎 NOS PACKS DE DIAMANTS</h2>
+
+<section class="products">
+<div class="product">
+<div class="diamond">💎</div>
+<h3>100 Diamants</h3>
+<div class="price">155 HTG</div>
+<button onclick="choosePack('100 Diamants',155)">Choisir</button>
 </div>
 
-<form onsubmit="sendOrder(event)">
+<div class="product">
+<div class="diamond">💎</div>
+<h3>310 Diamants</h3>
+<div class="price">465 HTG</div>
+<button onclick="choosePack('310 Diamants',465)">Choisir</button>
+</div>
+
+<div class="product">
+<div class="diamond">💎</div>
+<h3>520 Diamants</h3>
+<div class="price">775 HTG</div>
+<button onclick="choosePack('520 Diamants',775)">Choisir</button>
+</div>
+
+<div class="product">
+<div class="diamond">💎</div>
+<h3>1060 Diamants</h3>
+<div class="price">1550 HTG</div>
+<button onclick="choosePack('1060 Diamants',1550)">Choisir</button>
+</div>
+
+<div class="product">
+<div class="diamond">💎</div>
+<h3>2180 Diamants</h3>
+<div class="price">3100 HTG</div>
+<button onclick="choosePack('2180 Diamants',3100)">Choisir</button>
+</div>
+
+<div class="product">
+<div class="diamond">💎</div>
+<h3>5600 Diamants</h3>
+<div class="price">7750 HTG</div>
+<button onclick="choosePack('5600 Diamants',7750)">Choisir</button>
+</div>
+</section>
+
 <h2>🛒 PASSER UNE COMMANDE</h2>
-<input id="name" placeholder="Votre nom" required>
-<input id="whatsapp" placeholder="Votre numéro WhatsApp" required>
-<input id="uid" placeholder="ID joueur Free Fire" required>
+
+<form class="formbox" id="orderForm">
+<label>Nom du client</label>
+<input id="customer" type="text" placeholder="Votre nom" required>
+
+<label>Numéro WhatsApp</label>
+<input id="phone" type="tel" placeholder="Votre numéro" required>
+
+<label>Identifiant joueur Free Fire (UID)</label>
+<input id="uid" type="text" placeholder="Entrez votre UID" required>
+
+<label>Choisir un pack</label>
 <select id="pack" required>
-<option value="">Choisir un pack</option>
-<option value="100">100 Diamants - 155 HTG</option>
-<option value="310">310 Diamants - 465 HTG</option>
-<option value="520">520 Diamants - 775 HTG</option>
-<option value="1060">1060 Diamants - 1550 HTG</option>
-<option value="2180">2180 Diamants - 3100 HTG</option>
-<option value="5600">5600 Diamants - 7750 HTG</option>
+<option value="">-- Sélectionnez un pack --</option>
+<option value="100 Diamants|155">100 Diamants - 155 HTG</option>
+<option value="310 Diamants|465">310 Diamants - 465 HTG</option>
+<option value="520 Diamants|775">520 Diamants - 775 HTG</option>
+<option value="1060 Diamants|1550">1060 Diamants - 1550 HTG</option>
+<option value="2180 Diamants|3100">2180 Diamants - 3100 HTG</option>
+<option value="5600 Diamants|7750">5600 Diamants - 7750 HTG</option>
 </select>
+
+<label>Méthode de paiement</label>
 <select id="payment" required>
-<option value="">Mode de paiement</option>
+<option value="">-- Choisissez --</option>
 <option>MonCash</option>
 <option>NatCash</option>
 </select>
-<button type="submit">Envoyer ma commande</button>
-<p id="message"></p>
+
+<button class="submit" type="submit">Préparer ma commande</button>
+<p class="note">Attention : cette page prépare votre commande dans WhatsApp. La commande n'est pas encore enregistrée dans une base de données et le paiement n'est pas encore vérifié automatiquement.</p>
 </form>
-</main>
-<footer>© 2026 ANDERSON TOP UP · Tous droits réservés</footer>
+
+<footer>
+© 2026 ANDERSON TOP UP<br>
+Boutique Free Fire 💙
+</footer>
+
 <script>
-function choose(d,p){
-document.getElementById('pack').value=d;
-document.getElementById('pack').scrollIntoView({behavior:'smooth'});
+function choosePack(name,price){
+ document.getElementById("pack").value=name+"|"+price;
+ document.getElementById("orderForm").scrollIntoView({behavior:"smooth"});
 }
-function sendOrder(e){
-e.preventDefault();
-document.getElementById('message').textContent=
-"Le formulaire est prêt. La connexion au système de commande sera ajoutée à la prochaine étape.";
-}
+
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+
+ const customer=document.getElementById("customer").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const uid=document.getElementById("uid").value.trim();
+ const pack=document.getElementById("pack").value;
+ const payment=document.getElementById("payment").value;
+
+ if(!pack){alert("Veuillez choisir un pack.");return;}
+
+ const parts=pack.split("|");
+ const message=
+ "Bonjour ANDERSON TOP UP ! Je souhaite passer une commande.\n\n"+
+ "Nom : "+customer+"\n"+
+ "WhatsApp : "+phone+"\n"+
+ "UID Free Fire : "+uid+"\n"+
+ "Pack : "+parts[0]+"\n"+
+ "Prix : "+parts[1]+" HTG\n"+
+ "Paiement : "+payment;
+
+ window.open("https://wa.me/?text="+encodeURIComponent(message),"_blank");
+});
 </script>
+
 </body>
 </html>
